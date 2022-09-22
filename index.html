@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação com Javascript</title>
+</head>
+<body>
+    
+    <form action="" method="POST" onsubmit="return validarTudo()">
+        <div>
+            <input type="text" id="txNome" placeholder="Nome">
+        </div>
+        <div>
+            <input type="text" id="txAssunto" placeholder="Assunto">
+        </div>
+
+        <div>
+            <input type="submit" value="Enviar">
+        </div>
+    </form>    
+</body>
+</html>
+
+<script>
+
+    function validarNome(){
+        let nome = document.getElementById('txNome').value;
+
+        if(nome.length > 3){
+            return true;
+        } else{
+            return false
+        }
+    }
+
+    function validarAssunto(){
+        let assunto = document.getElementById('txAssunto').value;
+
+        if(assunto.length > 3){
+            return true;
+        } else{
+            return false
+        }
+    }
+
+    function validarTudo(){
+
+        if(validarNome() && validarAssunto()){
+            alert('Dados enviados com sucesso!');
+            return true;
+        } else{
+            alert('ERRO AO ENVIAR');
+            return false;
+        }
+       
+        alert(nome + ' ' + assunto)
+    }
+
+</script>
